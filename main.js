@@ -96,8 +96,8 @@ const validateCred = arr => {
 // Create another function, findInvalidCards() that has one parameter for a nested array of credit card numbers. The role of findInvalidCards() is to check through the nested array for which numbers are invalid, and return another nested array of invalid cards.
 
 //Find invalid credit card function:
+let invalidCredArray = []
 const findInvalidCards = nestedArr => {
-  let invalidCredArray = []
   for (let i = 0; i < nestedArr.length; i++) {
     if (validateCred(nestedArr[i]) === false) {
       invalidCredArray.push(nestedArr[i])
@@ -105,6 +105,14 @@ const findInvalidCards = nestedArr => {
   }
   return invalidCredArray
 } 
+// console.log(findInvalidCards(batch))
 
-//console.log(findInvalidCards(batch))
+//After finding all the invalid credit card numbers, it’s also necessary to identify the credit card companies that have possibly issued these faulty numbers. Create a function, idInvalidCardCompanies() that has one parameter for a nested array of invalid numbers and returns an array of companies.
 
+//Find the companies that provided the invalid card numbers
+const idInvalidCardCompanies = nestedArr => {
+  let companies = []
+  
+}
+
+console.log(idInvalidCardCompanies(invalidCredArray))
