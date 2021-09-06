@@ -97,14 +97,14 @@ const validateCred = arr => {
 
 //Find invalid credit card function:
 const findInvalidCards = nestedArr => {
-  let invalidCards = []
+  let invalidCredArray = []
   for (let i = 0; i < nestedArr.length; i++) {
-     if (validateCred(nestedArr[i]) === true) {
-       invalidCards += nestedArr[i]
-     }
-  return invalidCards
-}
+    if (validateCred(nestedArr[i]) === false) {
+      invalidCredArray.push(nestedArr[i])
+    }
+  }
+  return invalidCredArray
+} 
 
-  console.log(findInvalidCards(batch))
+//console.log(findInvalidCards(batch))
 
-}
