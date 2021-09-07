@@ -41,20 +41,16 @@ const validateCred = arr => {
     checkDigits += arr[i]
     finalCheckDigits = checkDigits.split('')
   }
-  // console.log(finalCheckDigits)
   finalSumArray = finalCheckDigits.map((i) => Number(i))
-  // console.log(finalSumArray)
   finalSum1 = finalSumArray.reduce(reducer)
-  // console.log('final sum: ' + finalSum1)
- 
- for (let i = arr.length - 2; i >= 0; i -= 2) {
+  
+  for (let i = arr.length - 2; i >= 0; i -= 2) {
    doubleDigits += arr[i]
    finalDoubleDigits = doubleDigits.split('')
  }
-//  console.log(finalDoubleDigits)
  doubleDigitArray = finalDoubleDigits.map((i) => Number(i))
-//  console.log(doubleDigitArray)
- for(let i = 0; i < doubleDigitArray.length; i++) {
+  
+  for(let i = 0; i < doubleDigitArray.length; i++) {
    finalDoubleDigitArray = doubleDigitArray.map(x => x * 2)
    for (let i = 0; i < finalDoubleDigitArray.length; i++) {
      if (finalDoubleDigitArray[i] > 9) {
@@ -63,11 +59,7 @@ const validateCred = arr => {
    }
  }
  finalSum2 = finalDoubleDigitArray.reduce(reducer)
-//  console.log(finalDoubleDigitArray)
-//  console.log('final sum: ' + finalSum2)
-
  result = finalSum1 + finalSum2
-//  console.log('final result: ' + result)
  
  if (result % 10 === 0) {
    return true
@@ -75,23 +67,6 @@ const validateCred = arr => {
    return false
  }
 }
-
-// console.log(validateCred(valid1))
-// console.log(validateCred(valid2))
-// console.log(validateCred(valid3))
-// console.log(validateCred(valid4))
-// console.log(validateCred(valid5))
-// console.log(validateCred(invalid1))
-// console.log(validateCred(invalid2))
-// console.log(validateCred(invalid3))
-// console.log(validateCred(invalid4))
-// console.log(validateCred(invalid5))
-// console.log(validateCred(mystery1))
-// console.log(validateCred(mystery2))
-// console.log(validateCred(mystery3))
-// console.log(validateCred(mystery4))
-// console.log(validateCred(mystery5))
-
 
 // Create another function, findInvalidCards() that has one parameter for a nested array of credit card numbers. The role of findInvalidCards() is to check through the nested array for which numbers are invalid, and return another nested array of invalid cards.
 
@@ -105,8 +80,6 @@ const findInvalidCards = nestedArr => {
   }
   return invalidCredArray
 } 
-// console.log(findInvalidCards(batch))
-
 //After finding all the invalid credit card numbers, it’s also necessary to identify the credit card companies that have possibly issued these faulty numbers. Create a function, idInvalidCardCompanies() that has one parameter for a nested array of invalid numbers and returns an array of companies.
 
 //Find the companies that provided the invalid card numbers
