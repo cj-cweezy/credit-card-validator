@@ -112,7 +112,24 @@ const findInvalidCards = nestedArr => {
 //Find the companies that provided the invalid card numbers
 const idInvalidCardCompanies = nestedArr => {
   let companies = []
-  
+  for (let i = 0; i < nestedArr.length; i++) {
+    if (nestedArr[i][0] === 3 && !companies.includes('Amex')) {
+      companies.push('Amex')
+    }
+    else if (nestedArr[i][0] === 4 && !companies.includes('Visa')) {
+      companies.push('Visa')
+    }
+    else if (nestedArr[i][0] === 5 && !companies.includes('Mastercard')) {
+      companies.push('Mastercard')
+    }
+    else if (nestedArr[i][0] === 6 && !companies.includes('Discover')) {
+      companies.push('Discover')
+    } 
+    else if (nestedArr[i][0] !== 3 || nestedArr[i][0] !== 4 || nestedArr[i][0] !== 5 || nestedArr[i][0] !== 6) {
+      console.log('Company not found')
+    }
+  }
+  return companies
 }
 
-console.log(idInvalidCardCompanies(invalidCredArray))
+console.log(idInvalidCardCompanies(findInvalidCards(batch)))
